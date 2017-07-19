@@ -19,7 +19,7 @@ $provider = new J4k\OAuth2\Client\Provider\Vkontakte([
     'clientId'     => '1234567',
     'clientSecret' => 's0meRe4lLySEcRetC0De',
     'redirectUri'  => 'https://example.org/oauth-endpoint',
-    'scopes'       => ['email', 'offline', 'friends'],
+    'scope'       => ['email', 'offline', 'friends'],
 ]);
 ```
 
@@ -54,7 +54,7 @@ else {
         $providerAccessToken = $provider->getAccessToken('authorization_code', ['code' => $code]);
         // Yay, got it!
         var_dump([
-            'access_token'  => $providerAccessToken->getAccessToken(),
+            'access_token'  => $providerAccessToken->getToken(),
             'expires'       => $providerAccessToken->getExpires(),
             'user_id'       => $providerAccessToken->getValues()['user_id'],
             'email'         => $providerAccessToken->getValues()['email'], // Only for "email" scope
